@@ -1,0 +1,6 @@
+dbt-core
+dbt-bigquery
+requests
+google-cloud-storage
+google-cloud-bigquery
+python-dotenv
