@@ -6,3 +6,4 @@ python3 -m venv .venv
 .venv/bin/pip install --upgrade pip
 .venv/bin/pip install -r requirements.txt
 [ -n "$SECRET_GCP_CREDS" ] && echo "$SECRET_GCP_CREDS" | base64 -d > gcp-service-account.json
+chmod 600 gcp-service-account.json
