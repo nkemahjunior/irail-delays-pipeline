@@ -5,6 +5,9 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteEnv": {
+  "GOOGLE_APPLICATION_CREDENTIALS": "${containerWorkspaceFolder}/gcp-service-account.json"
+},
   "customizations": {
     "vscode": {
       "extensions": ["ms-python.python"]
