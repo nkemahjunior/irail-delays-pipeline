@@ -226,3 +226,9 @@ keys/
 target/
 dbt_packages/
 logs/
+
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
