@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# secrets
+gcp-service-account.json
+keys/
+
+# dbt
+target/
+dbt_packages/
+logs/
