@@ -1,0 +1,18 @@
+id: poll_irail
+namespace: irail
+
+tasks:
+  - id: poll
+    type: io.kestra.plugin.scripts.shell.Commands
+    containerImage: irail-ingestion:dev
+    taskRunner:
+      type: io.kestra.plugin.scripts.runner.docker.Docker
+      pullPolicy: NEVER
+    inputFiles:
+      gcp.json: "{{ secret('GCP_CREDS') }}"
+    env:
+      IRAIL_CONTACT: "{{ envs.irail_contact }}"
+      GCP_PROJECT: "{{ envs.gcp_project }}"
+      GCS_BUCKET: "{{ envs.gcs_bucket }}"
+    commands:
+      - GOOGLE_APPLICATION_CREDENTIALS="$PWD/gcp.json" python /app/ingestion/poll_irail.py

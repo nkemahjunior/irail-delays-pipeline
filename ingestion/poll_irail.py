@@ -39,7 +39,7 @@ STATIONS = {
     "BE.NMBS.008831112": "Diepenbeek",
 }
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", stream=sys.stdout)
 log = logging.getLogger(__name__)
 
 
