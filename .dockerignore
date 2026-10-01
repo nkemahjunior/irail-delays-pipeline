@@ -1,0 +1,6 @@
+.venv/
+.env
+gcp-service-account.json
+data/
+terraform/
+.git/
