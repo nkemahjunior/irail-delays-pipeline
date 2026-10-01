@@ -1,4 +1,10 @@
 terraform {
+  backend "gcs" {
+    bucket = "my-project-de-502211-tfstate"
+    prefix = "irail"
+  }
+
+
   required_providers {
     google = {
       source  = "hashicorp/google"
