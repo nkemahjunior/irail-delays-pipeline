@@ -3,6 +3,7 @@ locals {
     "run.googleapis.com",
     "artifactregistry.googleapis.com",
     "cloudscheduler.googleapis.com",
+    "iam.googleapis.com"
   ]
 }
 
@@ -22,6 +23,7 @@ resource "google_artifact_registry_repository" "images" {
 resource "google_service_account" "poller" {
   account_id   = "irail-poller"
   display_name = "iRail poller (Cloud Run job)"
+  depends_on   = [google_project_service.apis]
 }
 
 resource "google_storage_bucket_iam_member" "poller_writes_raw" {
